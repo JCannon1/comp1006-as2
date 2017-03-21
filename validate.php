@@ -19,7 +19,7 @@ if (password_verify($password, $user['password'])) {
     $_SESSION['userId'] = $user['userId'];
 
     $_SESSION['username'] = $username;
-    header('location:albums.php');
+    header('location:admin-users.php');
 }
 else {
     header('location:login.php?invalid=true');
