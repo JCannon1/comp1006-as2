@@ -6,12 +6,13 @@ require_once ('header.php'); ?>
     <h1>Log In</h1>
 
     <!-- login validation -->
+    <!-- edited alert style -->
     <?php 
     if ($_GET['invalid'] == true) {
         echo '<div class="alert alert-danger" id="message">Invalid Login</div>';
     }
     else {
-        echo '<div class="alert alert-info" id="message">Please log in your account</div>';
+        echo '<div class="alert alert-primary" id="message">Please log in your account below</div>';
     }
     ?>
 
@@ -26,7 +27,8 @@ require_once ('header.php'); ?>
         <input type="password" name="password" required />
     </fieldset>
     <fieldset class="col-sm-offset-2">
-        <button class="btn btn-success">Login</button>
+        <!-- edited button style -->
+        <button class="btn btn-primary">Login</button>
     </fieldset>
     </form>
 </main>

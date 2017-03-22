@@ -5,7 +5,8 @@ require_once ('header.php'); ?>
 <!-- registration form -->
 <main class="container">
     <h1>New User Registration</h1>
-    <div class="alert alert-info" id="message">Please create your account</div>
+    <!-- edited alert style -->
+    <div class="alert alert-primary" id="message">Please create your new account</div>
 
     <form method="post" action="save-registration.php">
     <fieldset class="form-group">
@@ -22,7 +23,8 @@ require_once ('header.php'); ?>
         <input type="password" name="confirm" id="confirm" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
     </fieldset>
     <div class="col-sm-offset-2">
-        <button class="btn btn-success btnRegister">Register</button>
+        <!-- edited button style -->
+        <button class="btn btn-primary btnRegister">Register</button>
     </div>
     </form>
 </main>
