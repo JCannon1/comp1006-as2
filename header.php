@@ -40,7 +40,5 @@ ob_start();
     if (!empty($_SESSION['userId'])) {
         echo '<div class="navbar-text pull-right">' . $_SESSION['username'] . '</div>';
     }
-
+    ?>
 </nav>
-</body>
-</html>

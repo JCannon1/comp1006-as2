@@ -27,7 +27,6 @@ require_once ('header.php'); ?>
         <input type="password" name="password" required />
     </fieldset>
     <fieldset class="col-sm-offset-2">
-        <!-- edited button style -->
         <button class="btn btn-primary">Login</button>
     </fieldset>
     </form>
