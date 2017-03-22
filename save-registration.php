@@ -7,11 +7,13 @@
 <body>
 
 <?php 
+// save user inputs as variables
 $username = $_POST['username'];
 $password = $_POST['password'];
 $confrim = $_POST['confirm'];
 $ok = true;
 
+// validate the inputs
 if (empty($username)) {
     echo 'Username is required<br />';
     $ok = false;
@@ -29,10 +31,13 @@ if ($password != $confirm) {
 
 if ($ok) {
 
+    // connect to database
     require_once ('db.php');
 
+    // SQL insert the inputs
     $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
 
+    // hash the password used for registration
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     $cmd = $conn->prepare($sql);
@@ -40,6 +45,7 @@ if ($ok) {
     $cmd->bindParam(':password', $password, PDO::PARAM_STR, 255);
     $cmd->execute();
 
+    // disconnect from the database
     $conn = null;
 
     echo 'Registration Saved. <a href="login.php">Login</a>';

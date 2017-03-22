@@ -13,6 +13,7 @@ if (!empty($_GET['userId'])) {
     if (is_numeric($_GET['userId'])) {
         $userId = $_GET['userId'];
 
+        // connect to database
         require_once ('db.php');
 
         $sql = "SELECT userId, username FROM users WHERE userId = :userId";
@@ -21,15 +22,17 @@ if (!empty($_GET['userId'])) {
         $cmd->execute();
         $album = $cmd->fetch();
 
+        // change the user values into variables 
         $userId = $user['userId'];
         $username = $user['username'];
 
+        // disconnect from the database
         $conn = null;
     }
 }
 
 ?>
-
+<!-- user details form -->
 <main class="container">
     <h1>User Details</h1>
 
@@ -42,6 +45,10 @@ if (!empty($_GET['userId'])) {
             <label for="username" class="col-sm-1">Year:</label>
             <input name="username" id="username"  placeholder="Release Year" value="<?php echo $username; ?>" />
         </fieldset>
+
+        <input name="userId" id="userId" value="<?php echo $userId; ?>" type="hidden" />
+        <button class="btn btn-success col-sm-offset-1">Save</button>
+    </form>
 </main>
 
 <?php

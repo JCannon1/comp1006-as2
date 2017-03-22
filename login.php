@@ -5,6 +5,7 @@ require_once ('header.php'); ?>
 <main class="container">
     <h1>Log In</h1>
 
+    <!-- login validation -->
     <?php 
     if ($_GET['invalid'] == true) {
         echo '<div class="alert alert-danger" id="message">Invalid Login</div>';
@@ -14,6 +15,7 @@ require_once ('header.php'); ?>
     }
     ?>
 
+    <!-- login form -->
     <form method="post" action="validate.php">
     <fieldset class="form-group">
         <label for="username" class="col-sm-2">Username:</label>

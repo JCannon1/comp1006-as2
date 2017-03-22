@@ -1,5 +1,6 @@
 <?php ob_start();
 
+// use auth.php to do an authorization check
 require_once ('auth.php');
 ?>
 
@@ -16,6 +17,7 @@ require_once ('auth.php');
 try {
     $userId = null;
 
+    // make sure userId has a numeric value
     if (!empty($_GET['userId'])) {
         if (is_numeric($_GET['userId'])) {
             $userId = $_GET['userId'];
@@ -24,13 +26,16 @@ try {
 
     if (!empty($userId)) {
 
+        // connect to database
         require_once('db.php');
 
+        // run the SQL delete command
         $sql = "DELETE FROM users WHERE userId = :userId";
         $cmd = $conn->prepare($sql);
         $cmd->bindParam(':userId', $userId, PDO::PARAM_INT);
         $cmd->execute();
 
+        // disconnect from the database
         $conn = null;
     }
 

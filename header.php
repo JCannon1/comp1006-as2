@@ -8,7 +8,10 @@ ob_start();
     <meta charset="UTF-8">
     <title><?php echo $pageTitle; ?></title>
 
+    <!-- minified CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- bootstrap theme CSS -->
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 
 </head>

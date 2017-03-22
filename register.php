@@ -2,6 +2,7 @@
 $pageTitle = 'Sign Up';
 require_once ('header.php'); ?>
 
+<!-- registration form -->
 <main class="container">
     <h1>New User Registration</h1>
     <div class="alert alert-info" id="message">Please create your account</div>
