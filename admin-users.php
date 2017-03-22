@@ -55,6 +55,7 @@ try {
     // end the table
     echo '</table>';
 
+    // disconnect from the database
     $conn =null;
 }
 catch (exception $e) {
