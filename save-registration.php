@@ -10,7 +10,7 @@
 // save user inputs as variables
 $username = $_POST['username'];
 $password = $_POST['password'];
-$confrim = $_POST['confirm'];
+$confirm = $_POST['confirm'];
 $ok = true;
 
 // validate the inputs
