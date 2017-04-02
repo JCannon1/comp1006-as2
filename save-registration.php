@@ -35,7 +35,7 @@ if ($ok) {
     require_once ('db.php');
 
     // SQL insert the inputs
-    $sql = "INSERT INTO adminUsers (username, password) VALUES (:username, :password)";
+    $sql = "INSERT INTO adminusers (username, password) VALUES (:username, :password)";
 
     // hash the password used for registration
     $password = password_hash($password, PASSWORD_DEFAULT);
