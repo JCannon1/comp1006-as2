@@ -13,7 +13,7 @@ if (!empty($_SESSION['userId'])) {
     echo '<a href="user-details.php">Add a New User</a> ';
 }
 
-try {
+// try {
     // connect to database
     require_once('db.php');
 
@@ -50,18 +50,18 @@ try {
         }
 
         echo '</tr>';
-    }
+    // }
 
     // end the table
     echo '</table>';
 
     // disconnect from the database
     $conn =null;
-}
-catch (exception $e) {
-    mail('jessecannon1@hotmail.com', 'User Page Error', $e);
-    header('location:error.php');
-}
+// }
+// catch (exception $e) {
+//     mail('jessecannon1@hotmail.com', 'User Page Error', $e);
+//     header('location:error.php');
+// }
 ?>
 
 <?php require_once('footer.php');
