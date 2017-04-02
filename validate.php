@@ -13,12 +13,12 @@ $cmd = $conn->prepare($sql);
 $cmd->bindParam(':username', $username, PDO::PARAM_STR, 50);
 $cmd->execute();
 
-$adminusers = $cmd->fetch();
+$user = $cmd->fetch();
 
-if (password_verify($password, $adminusers['password'])) {
+if (password_verify($password, $user['password'])) {
     // user is found
     session_start();
-    $_SESSION['userId'] = $adminusers['userId']; // put the user's id in a session variable
+    $_SESSION['userId'] = $user['userId']; // put the user's id in a session variable
     $_SESSION['username'] = $username;
     header('location:admin-users.php'); // send user to admin-users.php once authenticated
 }
