@@ -16,11 +16,11 @@ if (!empty($_GET['userId'])) {
         // connect to database
         require_once ('db.php');
 
-        $sql = "SELECT userId, username FROM users WHERE userId = :userId";
+        $sql = "SELECT userId, username FROM adminusers WHERE userId = :userId";
         $cmd = $conn->prepare($sql);
         $cmd->bindParam(':userId', $userId, PDO::PARAM_INT);
         $cmd->execute();
-        $album = $cmd->fetch();
+        $user = $cmd->fetch();
 
         // change the user values into variables 
         $userId = $user['userId'];

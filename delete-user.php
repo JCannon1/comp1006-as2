@@ -30,7 +30,7 @@ try {
         require_once('db.php');
 
         // run the SQL delete command
-        $sql = "DELETE FROM users WHERE userId = :userId";
+        $sql = "DELETE FROM adminusers WHERE userId = :userId";
         $cmd = $conn->prepare($sql);
         $cmd->bindParam(':userId', $userId, PDO::PARAM_INT);
         $cmd->execute();
