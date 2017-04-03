@@ -34,6 +34,15 @@ ob_start();
             echo '<li><a href="add-page.php">Add Page</a></li> <li><a href="logout.php">Logout</a></li>';
         }
         ?>
+        <!-- Logo Upload -->
+        <!--<title>Upload Page</title>
+</head>
+<body>
+<form method="post" action="save-upload.php" enctype="multipart/form-data">
+    <label for"anyFile">Choose a File: </label>
+    <input name="anyFile" id="anyFile" type="file" />
+    <button>Upload</button>
+</form>-->
     </ul>
 
     <?php

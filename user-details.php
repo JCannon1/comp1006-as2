@@ -14,7 +14,7 @@ if (!empty($_GET['userId'])) {
         $userId = $_GET['userId'];
 
         // connect to database
-        require_once ('db.php');
+        require_once ('../db.php');
 
         $sql = "SELECT userId, username FROM adminusers WHERE userId = :userId";
         $cmd = $conn->prepare($sql);

@@ -27,7 +27,7 @@ try {
     if (!empty($userId)) {
 
         // connect to database
-        require_once('db.php');
+        require_once('../db.php');
 
         // run the SQL delete command
         $sql = "DELETE FROM adminusers WHERE userId = :userId";

@@ -32,7 +32,7 @@ if ($password != $confirm) {
 if ($ok) {
 
     // connect to my database
-    require_once ('db.php');
+    require_once ('../db.php');
 
     // set up sql insert
     $sql = "INSERT INTO adminusers (username, password) VALUES (:username, :password)";

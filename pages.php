@@ -15,7 +15,7 @@ if (!empty($_SESSION['userId'])) {
 
 // try {
     // connect to database
-    require_once('db.php');
+    require_once('../db.php');
 
     // $sql = "SELECT userId, username, password FROM adminusers ORDER BY username";
 
