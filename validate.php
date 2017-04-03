@@ -4,10 +4,10 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 // connect to database
-require_once ('../db.php');
+require_once ('db.php');
 
 // use sql select to get the right username
-$sql = "SELECT userId, password FROM adminusers WHERE username = :username";
+$sql = "SELECT userId, password FROM users WHERE username = :username";
 
 $cmd = $conn->prepare($sql);
 $cmd->bindParam(':username', $username, PDO::PARAM_STR, 50);

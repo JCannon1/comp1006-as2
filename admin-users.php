@@ -15,9 +15,9 @@ if (!empty($_SESSION['userId'])) {
 
 // try {
     // connect to database
-    require_once('../db.php');
+    require_once('db.php');
 
-    $sql = "SELECT userId, username, password FROM adminusers ORDER BY username";
+    $sql = "SELECT userId, username, password FROM users ORDER BY username";
 
     $cmd = $conn->prepare($sql);
     $cmd->execute();
@@ -34,7 +34,7 @@ if (!empty($_SESSION['userId'])) {
     echo '</tr>';
 
     // loop through the users data in the database
-    foreach ($adminusers as $user) {
+    foreach ($users as $user) {
         echo '<tr><td>' . $user['username'] . '</td>
             <td>' . $user['password'] . '</td>
             <td>';

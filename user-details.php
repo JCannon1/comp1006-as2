@@ -14,9 +14,9 @@ if (!empty($_GET['userId'])) {
         $userId = $_GET['userId'];
 
         // connect to database
-        require_once ('../db.php');
+        require_once ('db.php');
 
-        $sql = "SELECT userId, username FROM adminusers WHERE userId = :userId";
+        $sql = "SELECT userId, username FROM users WHERE userId = :userId";
         $cmd = $conn->prepare($sql);
         $cmd->bindParam(':userId', $userId, PDO::PARAM_INT);
         $cmd->execute();
