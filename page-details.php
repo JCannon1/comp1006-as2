@@ -1,8 +1,14 @@
 <?php ob_start();
+
+require_once('auth.php');
+
+$pageTitle = 'Add Page';
+require_once ('header.php');
+
 ?>
 
 <main class="container">
-    <h1>Page Details</h1>
+    <h1>Add New Page</h1>
 
     <form method="post" action="save-page.php" enctype="multipart/form-data">
         <fieldset class="form-group">
