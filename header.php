@@ -27,7 +27,7 @@ ob_start();
 
         if (empty($_SESSION['userId'])) {
             echo '<li><a href="register.php">Register</a></li>
-                <li><a href="login.php">Login</a></li>';
+                <li><a href="login.php">Login</a></li> <li><a href="control-pannel.php">Control Pannel</a></li>';
         }
         else {
             // logout link
