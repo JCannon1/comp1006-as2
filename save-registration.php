@@ -7,6 +7,7 @@
 <body>
 
 <?php
+ini_set('display_errors', 1);
 // save user inputs to variables
 $username = $_POST['username'];
 $password = $_POST['password'];
