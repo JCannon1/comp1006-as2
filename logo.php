@@ -3,17 +3,17 @@
 $pageTitle = 'Upload Logo';
 require_once('header.php'); ?>
 
-<?php 
-if (file_exists("images/" . $_FILES["file"]["name"]))
-    {
-    $_FILES["file"]["name"] . " File name already exists. ";
-    }
-else {
-    move_uploaded_file($_FILES["file"]["tmp_name"],
-    "images/" . $_FILES["file"]["name"]);
-    echo "Stored in: " . "images/" . $_FILES["file"]["name"];
-    }
-?>
+<!--?php 
+// if (file_exists("images/" . $_FILES["file"]["name"]))
+//     {
+//     $_FILES["file"]["name"] . " File name already exists. ";
+//     }
+// else {
+//     move_uploaded_file($_FILES["file"]["tmp_name"],
+//     "images/" . $_FILES["file"]["name"]);
+//     echo "Stored in: " . "images/" . $_FILES["file"]["name"];
+//     }
+?>-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,17 +29,34 @@ else {
     <button>Upload</button>
 </form>
 
-<?php
-    if (!empty($logo)) {
-        echo '<div>
-            <img src="images/' . $logo . '" title="Logo" />
-            </div>';
-    }
-    ?>
+<?php 
+    $logo = "images/";
 
-<form id="logo" name="logo" action="">
+    if (is_dir($logo)) {
+        if ($open = opendir($folder))
+        {
+            while (($file = readdir($open)) !=false)
+            {
+                if ($file =='.' || $file =='..') continue;
+
+                echo ' <img src ="images/'.$file.'" width = "200" height = "150" >';
+            }
+            closedir($open);
+        }
+    }
+?>
+
+<!--?php
+    // if (!empty($logo)) {
+    //     echo '<div>
+    //         <img src="images/' . $logo . '" title="Logo" />
+    //         </div>';
+    // }
+    ?-->
+
+<!--<form id="logo" name="logo" action="">
 <input type="hidden" id="logo" value="<?echo $_FILES["file"]["name"];?>"/>
-</form>
+</form>-->
 
 </body>
 </html>
