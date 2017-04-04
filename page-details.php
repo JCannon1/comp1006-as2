@@ -55,5 +55,9 @@ if (!empty($_GET['pageId'])) {
 </main>
 
 <?php
+}
+catch (exception $e) {
+    header('location:error.php');
+}
 require_once('footer.php');
 ob_flush(); ?>
