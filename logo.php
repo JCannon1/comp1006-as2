@@ -33,7 +33,7 @@ require_once('header.php'); ?>
     $logo = "images/";
 
     if (is_dir($logo)) {
-        if ($open = opendir($folder))
+        if ($open = opendir($logo))
         {
             while (($file = readdir($open)) !=false)
             {
