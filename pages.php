@@ -21,7 +21,7 @@ if (!empty($_SESSION['pageId'])) {
 
     $cmd = $conn->prepare($sql);
     $cmd->execute();
-    $adminusers = $cmd->fetchAll();
+    $pages = $cmd->fetchAll();
 
     // create the table and its headings
     echo '<table class="table table-striped table-hover">
