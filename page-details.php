@@ -5,6 +5,34 @@ require_once('auth.php');
 $pageTitle = 'Add Page';
 require_once ('header.php');
 
+try {
+$pageId = null;
+$title = null;
+$content = null;
+
+if (!empty($_GET['pageId'])) {
+    if (is_numeric($_GET['pageId'])) {
+        // we have a numeric pageId in the URL
+        $pageId = $_GET['pageId'];
+
+        // connect
+        require_once ('db.php');
+
+        $sql = "SELECT title, content FROM pages WHERE pageId = :pageId";
+        $cmd = $conn->prepare($sql);
+        $cmd->bindParam(':pageId', $pageId, PDO::PARAM_INT);
+        $cmd->execute();
+        $page = $cmd->fetch();
+
+        // populate our page values into variables
+        $title = $page['title'];
+        $content = $page['content'];
+
+        // disconnect
+        $conn = null;
+    }
+}
+
 ?>
 
 <main class="container">
