@@ -29,7 +29,7 @@ else {
     <button>Upload</button>
 </form>
 
-<form id="uploadLogo" name="uploadLogo" action="">
+<form id="uploadLogo" name="uploadLogo" action="save-upload.php">
 <input type="hidden" id="filename" value="<?echo $_FILES["file"]["name"];?>"/>
 
 </body>

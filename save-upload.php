@@ -7,17 +7,17 @@
 <body>
 
 <?php
-print_r($_FILES['anyFile']);
+print_r($_FILES['file']);
 
-$name = $_FILES['anyFile']['name'];
+$name = $_FILES['file']['name'];
 echo "$name<br />";
 
-$tmp_name = $_FILES['anyFile']['tmp_name'];
+$tmp_name = $_FILES['file']['tmp_name'];
 echo "$tmp_name<br />";
 
 $name = uniqid("", true) . "-$name";
 
-move_uploaded_file($tmp_name, "uploads/$name");
+move_uploaded_file($tmp_name, "images/$name");
 ?>
 
 </body>
