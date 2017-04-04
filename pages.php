@@ -9,7 +9,7 @@ require_once('header.php'); ?>
 // start session
 session_start();
 
-if (!empty($_SESSION['userId'])) {
+if (!empty($_SESSION['pageId'])) {
     echo '<a href="page-details.php">Add Page</a> ';
 }
 
@@ -17,7 +17,7 @@ if (!empty($_SESSION['userId'])) {
     // connect to database
     require_once('db.php');
 
-    // $sql = "SELECT userId, username, password FROM adminusers ORDER BY username";
+    $sql = "SELECT pageId, title, content FROM pages ORDER BY title";
 
     $cmd = $conn->prepare($sql);
     $cmd->execute();
@@ -25,26 +25,26 @@ if (!empty($_SESSION['userId'])) {
 
     // create the table and its headings
     echo '<table class="table table-striped table-hover">
-    <tr><th>Username</th><th>Password</th>';
+    <tr><th>Title</th><th>Content</th>';
 
-    if (!empty($_SESSION['userId'])) {
+    if (!empty($_SESSION['pageId'])) {
         echo '<th>Edit</th><th>Delete</th>';
     }
 
     echo '</tr>';
 
     // loop through the users data in the database
-    foreach ($adminusers as $user) {
-        echo '<tr><td>' . $user['username'] . '</td>
-            <td>' . $user['password'] . '</td>
+    foreach ($pages as $page) {
+        echo '<tr><td>' . $page['title'] . '</td>
+            <td>' . $page['content'] . '</td>
             <td>';
             }
         echo '</td>';
 
-        if (!empty($_SESSION['userId'])) {
-            echo '<td><a href="user-details.php?userId=' . $user
+        if (!empty($_SESSION['pageId'])) {
+            echo '<td><a href="page-details.php?userId=' . $page
             ['userId'] . '" class="btn btn-primary">Edit</a></td>
-            <td><a href="delete-user.php?userId=' . $user['userId'] 
+            <td><a href="delete-page.php?userId=' . $page['pageId'] 
             . '"
             class="btn btn-danger confirmation">Delete</a></td>';
         }
