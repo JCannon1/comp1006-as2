@@ -13,14 +13,14 @@ require_once ('header.php');
     <form method="post" action="save-page.php" enctype="multipart/form-data">
         <fieldset class="form-group">
             <label for="title" class="col-sm-1">Title: *</label>
-            <input name="title" id="title" required placeholder="Album Title" value="<?php echo $title; ?>" />
+            <input name="title" id="title" required placeholder="Title" value="<?php echo $title; ?>" />
         </fieldset>
         <fieldset class="form-group">
             <label for="content" class="col-sm-1">Content: *</label>
             <input name="content" id="content" required placeholder="Page Content" value="<?php echo $content; ?>" />
         </fieldset>
 
-         <input name="contentId" id="contentId" value="<?php echo $contentId; ?>" type="hidden" />
+         <input name="pageId" id="pageId" value="<?php echo $pageId; ?>" type="hidden" />
         <button class="btn btn-success col-sm-offset-1">Save</button>
     </form>
 

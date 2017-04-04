@@ -2,23 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Upload Details</title>
+    <title>Save Page</title>
 </head>
 <body>
 
 <?php
-print_r($_FILES['anyFile']);
+// save page inputs to variables
+$title = $_POST['title'];
+$content = $_POST['content'];
+$ok = true;
 
-$name = $_FILES['anyFile']['name'];
-echo "$name<br />";
+// validate inputs
+if (empty($title)) {
+    echo 'Title is required<br />';
+    $ok = false;
+}
 
-$tmp_name = $_FILES['anyFile']['tmp_name'];
-echo "$tmp_name<br />";
+if (empty($content)) {
+    echo 'Content is required<br />';
+    $ok = false;
+}
 
-$name = uniqid("", true) . "-$name";
+if ($ok) {
 
-move_uploaded_file($tmp_name, "uploads/$name");
+    // connect to my database
+    require_once ('db.php');
+
+    // set up sql insert
+    $sql = "INSERT INTO pages (title, content) VALUES (:title, :content)";
+
+    // execute the save
+    $cmd = $conn->prepare($sql);
+    $cmd->bindParam(':title', $title, PDO::PARAM_STR, 50);
+    $cmd->bindParam(':content', $content, PDO::PARAM_STR, 255);
+    $cmd->execute();
+
+    // disconnect from my database
+    $conn = null;
+
+    echo 'Page Saved. <a href="pages.php">Pages</a>';
+}
 ?>
-
 </body>
 </html>
