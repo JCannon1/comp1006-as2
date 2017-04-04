@@ -27,11 +27,11 @@ ob_start();
 
         if (empty($_SESSION['userId'])) {
             echo '<li><a href="register.php">Register</a></li>
-                <li><a href="login.php">Login</a></li> <li><a href="control-pannel.php">Control Pannel</a></li>';
+                <li><a href="login.php">Login</a></li>';
         }
         else {
             // logout link
-            echo '<li><a href="pages.php">Pages</a></li> <li><a href="logo.php">Logo</a></li> <li><a href="admin-users.php">Public Site</a></li> <li><a href="logout.php">Logout</a></li>';
+            echo '<li><a href="pages.php">Pages</a></li> <li><a href="logo.php">Logo</a></li> <li><a href="admin-users.php">Public Site</a></li> <li><a href="control-pannel.php">Control Pannel</a></li> <li><a href="logout.php">Logout</a></li>';
         }
         ?>
         <!-- Logo Upload -->
