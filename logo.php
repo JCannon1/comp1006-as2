@@ -23,39 +23,22 @@ require_once('header.php'); ?>
 </head>
 <body>
 <h1>Upload Logo</h1>
-<form method="post" action="control-pannel.php" enctype="multipart/form-data">
+<form method="post" action="save-upload.php" enctype="multipart/form-data">
     <label for"file">Choose a Logo: </label>
     <input name="file" id="file" type="file" />
     <button>Upload</button>
 </form>
 
-<?php 
-    $logo = "images/";
-
-    if (is_dir($logo)) {
-        if ($open = opendir($logo))
-        {
-            while (($file = readdir($open)) !=false)
-            {
-                if ($file =='.' || $file =='..') continue;
-
-                echo ' <img src ="images/'.$file.'" width = "200" height = "150" >';
-            }
-            closedir($open);
-        }
+<?php
+    if (!empty($logo)) {
+        echo '<div>
+            <img src="images/' . $logo . '" title="Logo" />
+            </div>';
     }
-?>
-
-<!--?php
-    // if (!empty($logo)) {
-    //     echo '<div>
-    //         <img src="images/' . $logo . '" title="Logo" />
-    //         </div>';
-    // }
-    ?-->
+    ?>
 
 <!--<form id="logo" name="logo" action="">
-<input type="hidden" id="logo" value="<?echo $_FILES["file"]["name"];?>"/>
+<input type="hidden" id="logo" value="?echo $_FILES["file"]["name"];?>"/>
 </form>-->
 
 </body>
