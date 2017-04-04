@@ -31,7 +31,7 @@ ob_start();
         }
         else {
             // logout link
-            echo '<li><a href="add-page.php">Add Page</a></li> <li><a href="logout.php">Logout</a></li>';
+            echo '<li><a href="add-page.php">Add Page</a></li> <li><a href="logo.php">Logo</a></li> <li><a href="admin-users.php">Public Site</a></li> <li><a href="logout.php">Logout</a></li>';
         }
         ?>
         <!-- Logo Upload -->

@@ -42,8 +42,12 @@ if (!empty($_GET['userId'])) {
             <input name="userId" id="userId" required placeholder="User Id" value="<?php echo $userId; ?>" />
         </fieldset>
         <fieldset class="form-group">
-            <label for="username" class="col-sm-1">Year:</label>
-            <input name="username" id="username"  placeholder="Release Year" value="<?php echo $username; ?>" />
+            <label for="username" class="col-sm-1">Username:</label>
+            <input name="username" id="username"  placeholder="Username" value="<?php echo $username; ?>" />
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="password" class="col-sm-1">Password:</label>
+            <input name="password" id="password"  placeholder="Password" value="<?php echo $password; ?>" />
         </fieldset>
 
         <input name="userId" id="userId" value="<?php echo $userId; ?>" type="hidden" />
