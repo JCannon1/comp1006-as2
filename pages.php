@@ -38,7 +38,7 @@ if (!empty($_SESSION['pageId'])) {
         echo '<tr><td>' . $page['title'] . '</td>
             <td>' . $page['content'] . '</td>
             <td>';
-            }
+            
         echo '</td>';
 
         // place somewhere else
@@ -53,7 +53,7 @@ if (!empty($_SESSION['pageId'])) {
         }
 
         echo '</tr>';
-    // }
+    }
 
     // end the table
     echo '</table>';
