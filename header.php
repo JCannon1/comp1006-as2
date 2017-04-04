@@ -32,7 +32,7 @@ ob_start();
         else {
             // logout link
             echo '<li><a href="pages.php">Pages</a></li> <li><a href="logo.php">Logo</a></li> <li><a href="admin-users.php">Public Site</a></li> <li><a href="control-pannel.php">Control Pannel</a></li> <li><a href="logout.php">Logout</a></li>';
-
+        }
         ?>
         <!-- Logo Upload -->
         <!--<title>Upload Page</title>
