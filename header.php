@@ -18,7 +18,7 @@ ob_start();
 
 <nav class="navbar navbar-default">
     <ul class="nav navbar-nav">
-        <li><a href="default.php" class="navbar-brand">COMP1006 - Admin Users</a></li>
+        <li><a href="default.php" class="navbar-brand"><img src="logo.php"</a></li>
         <li><a href="admin-users.php">Users</a></li>
 
         <?php
