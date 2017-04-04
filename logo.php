@@ -1,3 +1,8 @@
+<?php ob_start();
+
+$pageTitle = 'Upload Logo';
+require_once('header.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,3 +18,6 @@
 </form>
 </body>
 </html>
+
+<?php require_once('footer.php');
+ob_flush(); ?>
