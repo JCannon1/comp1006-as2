@@ -33,7 +33,7 @@ if (!empty($_SESSION['pageId'])) {
 
     echo '</tr>';
 
-    // loop through the users data in the database
+    // loop through the pages data in the database
     foreach ($pages as $page) {
         echo '<tr><td>' . $page['title'] . '</td>
             <td>' . $page['content'] . '</td>
@@ -42,9 +42,9 @@ if (!empty($_SESSION['pageId'])) {
         echo '</td>';
 
         if (!empty($_SESSION['pageId'])) {
-            echo '<td><a href="page-details.php?userId=' . $page
-            ['userId'] . '" class="btn btn-primary">Edit</a></td>
-            <td><a href="delete-page.php?userId=' . $page['pageId'] 
+            echo '<td><a href="page-details.php?pageId=' . $page
+            ['pageId'] . '" class="btn btn-primary">Edit</a></td>
+            <td><a href="delete-page.php?pageId=' . $page['pageId'] 
             . '"
             class="btn btn-danger confirmation">Delete</a></td>';
         }
