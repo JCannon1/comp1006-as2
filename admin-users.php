@@ -38,7 +38,7 @@ if (!empty($_SESSION['userId'])) {
         echo '<tr><td>' . $user['username'] . '</td>
             <td>' . $user['password'] . '</td>
             <td>';
-            }
+            
         echo '</td>';
 
         if (!empty($_SESSION['userId'])) {
@@ -50,7 +50,7 @@ if (!empty($_SESSION['userId'])) {
         }
 
         echo '</tr>';
-    // }
+    }
 
     // end the table
     echo '</table>';

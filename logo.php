@@ -29,8 +29,16 @@ else {
     <button>Upload</button>
 </form>
 
-<form id="uploadLogo" name="uploadLogo" action="">
-<input type="hidden" id="filename" value="<?echo $_FILES["file"]["name"];?>"/>
+<?php
+    if (!empty($logo)) {
+        echo '<div>
+            <img src="images/' . $logo . '" title="Logo" />
+            </div>';
+    }
+    ?>
+
+<form id="logo" name="logo" action="">
+<input type="hidden" id="logo" value="<?echo $_FILES["file"]["name"];?>"/>
 </form>
 
 </body>
