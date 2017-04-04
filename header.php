@@ -33,14 +33,6 @@ ob_start();
             // logout link
             echo '<li><a href="pages.php">Pages</a></li> <li><a href="logo.php">Logo</a></li> <li><a href="admin-users.php">Public Site</a></li> <li><a href="control-pannel.php">Control Pannel</a></li> <li><a href="logout.php">Logout</a></li>';
 
-            $sql = "SELECT pageId, title, content FROM pages";
-
-            $cmd = $conn->prepare($sql);
-            $cmd->execute();
-            $pages = $cmd->fetchAll();
-
-            echo '<li><a href="pages.php' . $page['pageId'] . '</a></li>';
-        }
         ?>
         <!-- Logo Upload -->
         <!--<title>Upload Page</title>
