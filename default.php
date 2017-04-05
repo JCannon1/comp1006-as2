@@ -5,8 +5,8 @@ require_once('header.php'); ?>
 <main class="container">
 
 <section class="jumbotron">
-    <h1>Welcome to</h1>
-    <p>This website is for</p>
+    <h1>Welcome to Hockey World</h1>
+    <p>This website is for all of your hockey equipment needs</p>
 </section>
 </main>
 
