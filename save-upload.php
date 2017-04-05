@@ -7,6 +7,7 @@
 <body>
 
 <?php
+ini_set('display_errors', 1);
 
 $logo = $_POST['logo'];
 $ok = true;
