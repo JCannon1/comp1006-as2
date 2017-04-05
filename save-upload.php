@@ -49,23 +49,27 @@ try {
             move_uploaded_file($tmp_name, "logos/$logo");
         }
 
-        if ($ok) {
+        if ($ok == true) {
 
             require_once ('db.php');
 
-        // set up sql insert
-        $sql = "INSERT INTO logos (logoId, logo) VALUES (:logo)";
+            if (empty($logoId)) {
+                $sql = "INSERT INTO logos (logoId, logo) VALUES (:logo)";
+            }
+            else {
+                $sql = "UPDATE logos SET logo = :logo WHERE logoId = :logoId";
+            }
 
-        // execute the save
-        $cmd = $conn->prepare($sql);
-        $cmd->bindParam(':logo', $logo, PDO::PARAM_STR, 50);
-        $cmd->execute();
+            // execute the save
+            $cmd = $conn->prepare($sql);
+            $cmd->bindParam(':logo', $logo, PDO::PARAM_STR, 50);
+            $cmd->execute();
 
-        // disconnect from my database
-        $conn = null;
+            // disconnect from my database
+            $conn = null;
 
-        echo 'Logo Saved. <a href="default.php">Logo</a>';
-        }
+            echo 'Logo Saved. <a href="default.php">Logo</a>';
+            }
 }
 catch (exception $e) {
     header('location:error.php');
