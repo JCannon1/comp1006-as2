@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Save Page</title>
-</head>
-<body>
-
 <?php
 // save page inputs to variables
 $title = $_POST['title'];
@@ -40,8 +32,21 @@ if ($ok) {
     // disconnect from my database
     $conn = null;
 
-    echo 'Page Saved. <a href="pages.php">Pages</a>';
+    $notice = 'Page Saved. <a href="pages.php">Pages</a>';
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Save Page</title>
+</head>
+<body>
+
+<?php 
+if(isset($notice)){echo $notice;} ?>
+
+
 </body>
 </html>
