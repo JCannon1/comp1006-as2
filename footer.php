@@ -1,6 +1,6 @@
 <footer class="navbar-fixed-bottom">
     <hr />
-    2017 | COMP1006 Assignment 2 <a href="https://www.linkedin.com/in/jesse-cannon-678294127"> <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a> <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i> <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
+    2017 | Hockey World | Facebook | Twiiter |Instagram <a href="https://www.linkedin.com/in/jesse-cannon-678294127"> <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a> <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i> <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
 </footer>
 
 <!-- jQuery -->
