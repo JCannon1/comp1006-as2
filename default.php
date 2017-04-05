@@ -1,5 +1,5 @@
 <?php 
-$pageTitle = 'COMP1006 | ';
+$pageTitle = 'COMP1006 | Hockey World';
 require_once('header.php'); ?>
 
 <main class="container">
