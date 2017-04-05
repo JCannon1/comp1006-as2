@@ -17,18 +17,6 @@ require_once('header.php'); ?>
     <button>Upload</button>
 </form>
 
-<?php
-    if (!empty($logo)) {
-        echo '<div>
-            <img src="uploads/' . $logo . '" title="Logo" />
-            </div>';
-    }
-    ?>
-
-<!--<form id="logo" name="logo" action="">
-<input type="hidden" id="logo" value="?echo $_FILES["file"]["name"];?>"/>
-</form>-->
-
 </body>
 </html>
 
