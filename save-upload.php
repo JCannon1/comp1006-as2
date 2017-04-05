@@ -52,7 +52,7 @@ if ($uploadOk == 0) {
 // display image
 $image = $_FILES["anyFile"]["name"]; 
 $img = "upload/".$image;
-echo "<img src=\"uploads/$img\">";
+echo "<img src=\"uploads/$img\>";
 ?>
 
 </body>
