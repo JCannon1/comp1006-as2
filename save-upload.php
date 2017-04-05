@@ -10,6 +10,7 @@
 ini_set('display_errors', 1);
 
 try {
+    $logoId = $_POST['logoId'];
     $logo = null;
 
     $ok = true;
