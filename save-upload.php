@@ -9,60 +9,66 @@
 <?php
 ini_set('display_errors', 1);
 
-$logo = $_POST['logo'];
-$ok = true;
+try {
+    $logo = null;
 
-if (!empty($_FILES['logo']['name'])) {
-        $name = $_FILES['logo']['name'];
+    $ok = true;
 
-        // use end() and explode() to get the letters after the last period i.e. the file extension
-        $arr = end(explode('.', $name));
-        //echo $arr;
+    if (!empty($_FILES['logo']['name'])) {
+            $name = $_FILES['logo']['name'];
 
-        // convert the extension to lower case
-        $type = strtolower($arr);
-        //echo $type;
+            // use end() and explode() to get the letters after the last period i.e. the file extension
+            $arr = end(explode('.', $name));
+            //echo $arr;
 
-        // allow jpg / png / gif / svg
-        $fileTypes = ['jpg', 'png', 'gif', 'svg'];
+            // convert the extension to lower case
+            $type = strtolower($arr);
+            //echo $type;
 
-        if (!in_array($type, $fileTypes)) {
-            echo 'Invalid Image Type<br />';
-            $ok = false;
+            // allow jpg / png / gif / svg
+            $fileTypes = ['jpg', 'png', 'gif', 'svg'];
+
+            if (!in_array($type, $fileTypes)) {
+                echo 'Invalid Image Type<br />';
+                $ok = false;
+            }
+
+            // size check
+            $size = $_FILES['logo']['size'];
+            if ($size > 2048000) {
+                echo 'Logo Image must be less than 2 MB<br />';
+                $ok = false;
+            }
+
+            // rename to unique file name
+            $logo = uniqid("") . "-$name";
+
+            // copy to /covers folder
+            $tmp_name = $_FILES['logo']['tmp_name'];
+            move_uploaded_file($tmp_name, "logos/$logo");
         }
 
-        // size check
-        $size = $_FILES['logo']['size'];
-        if ($size > 2048000) {
-            echo 'Logo Image must be less than 2 MB<br />';
-            $ok = false;
+        if ($ok) {
+
+            require_once ('db.php');
+
+        // set up sql insert
+        $sql = "INSERT INTO logos (logoId, logo) VALUES (:logo)";
+
+        // execute the save
+        $cmd = $conn->prepare($sql);
+        $cmd->bindParam(':logo', $logo, PDO::PARAM_STR, 50);
+        $cmd->execute();
+
+        // disconnect from my database
+        $conn = null;
+
+        echo 'Logo Saved. <a href="default.php">Logo</a>';
         }
-
-        // rename to unique file name
-        $logo = uniqid("") . "-$name";
-
-        // copy to /covers folder
-        $tmp_name = $_FILES['logo']['tmp_name'];
-        move_uploaded_file($tmp_name, "logos/$logo");
-    }
-
-    if ($ok) {
-
-        require_once ('db.php');
-
-    // set up sql insert
-    $sql = "INSERT INTO logos (logoId, logo) VALUES (:logo)";
-
-    // execute the save
-    $cmd = $conn->prepare($sql);
-    $cmd->bindParam(':logo', $logo, PDO::PARAM_STR, 50);
-    $cmd->execute();
-
-    // disconnect from my database
-    $conn = null;
-
-    echo 'Logo Saved. <a href="default.php">Logo</a>';
-    }
+}
+catch (exception $e) {
+    header('location:error.php');
+}
 ?>
 
 </body>
