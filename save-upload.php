@@ -11,7 +11,7 @@ ini_set('display_errors', 1);
 
 try {
     $logoId = $_POST['logoId'];
-    $logo = null;
+    $logo = $_POST['logo'];
 
     $ok = true;
 
@@ -53,20 +53,14 @@ try {
 
             require_once ('db.php');
 
-            if (empty($logoId)) {
-                $sql = "INSERT INTO logos (logoId, logo) VALUES (:logo)";
-            }
-            else {
-                $sql = "UPDATE logos SET logo = :logo WHERE logoId = :logoId";
-            }
-
+            $sql = "INSERT INTO logos (logoId, logo) VALUES (:logo)";
+            
             // execute the save
             $cmd = $conn->prepare($sql);
             $cmd->bindParam(':logo', $logo, PDO::PARAM_STR, 50);
             $cmd->execute();
 
-            // disconnect from my database
-            $conn = null;
+            $logo = $cmd->fetch();
 
             echo 'Logo Saved. <a href="default.php">Logo</a>';
             }
@@ -74,6 +68,10 @@ try {
 catch (exception $e) {
     header('location:error.php');
 }
+
+// disconnect from my database
+$conn = null;
+
 ?>
 
 </body>
