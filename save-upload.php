@@ -7,9 +7,6 @@
 <body>
 
 <?php
-if ($_FILES['anyFile']['error'] !== UPLOAD_ERR_OK) {
-   die("Upload failed with error code " . $_FILES['anyFile']['error']);
-}
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["anyFile"]["name"]);
 $uploadOk = 1;
