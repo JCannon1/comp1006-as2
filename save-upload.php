@@ -49,6 +49,10 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
+// display image
+$image = $_FILES["anyFile"]["name"]; 
+$img = "upload/".$image;
+echo "<img src=\"uploads/$img\">";
 ?>
 
 </body>
