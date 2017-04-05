@@ -9,7 +9,7 @@ require_once('header.php'); ?>
 // start session
 session_start();
 
-if (!empty($_SESSION['pageId'])) {
+if (empty($_SESSION['pageId'])) {
     echo '<a href="page-details.php">Add Page</a> ';
 }
 
@@ -27,7 +27,7 @@ if (!empty($_SESSION['pageId'])) {
     echo '<table class="table table-striped table-hover">
     <tr><th>Title</th><th>Content</th>';
 
-    if (!empty($_SESSION['pageId'])) {
+    if (empty($_SESSION['pageId'])) {
         echo '<th>Edit</th><th>Delete</th>';
     }
 
@@ -44,7 +44,7 @@ if (!empty($_SESSION['pageId'])) {
         // place somewhere else
         // echo '<img src="images/' . $logo['logo'] . ' />';
 
-        if (!empty($_SESSION['pageId'])) {
+        if (empty($_SESSION['pageId'])) {
             echo '<td><a href="page-details.php?pageId=' . $page
             ['pageId'] . '" class="btn btn-primary">Edit</a></td>
             <td><a href="delete-page.php?pageId=' . $page['pageId'] 
