@@ -7,6 +7,11 @@
 <body>
 
 <?php
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+error_reporting(E_ALL);
+error_reporting(-1);
+
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["anyFile"]["name"]);
 $uploadOk = 1;
