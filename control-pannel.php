@@ -2,7 +2,7 @@
 
 $pageTitle = 'Admin Users List';
 require_once('header.php'); ?>
-
+<!-- Created control pannel list with bootstrap -->
 <div class="list-group">
   <a href="admin-users.php" class="list-group-item">Add, Edit and Delete Site Administrators</a>
   <a href="page-details.php" class="list-group-item">Manage Site Content</a>

@@ -18,7 +18,6 @@ try {
     if (!empty($_FILES['logo']['name'])) {
             $name = $_FILES['logo']['name'];
 
-            // use end() and explode() to get the letters after the last period i.e. the file extension
             $arr = end(explode('.', $name));
             //echo $arr;
 
@@ -44,7 +43,7 @@ try {
             // rename to unique file name
             $logo = uniqid("") . "-$name";
 
-            // copy to /covers folder
+            // copy to logos/ folder
             $tmp_name = $_FILES['logo']['tmp_name'];
             move_uploaded_file($tmp_name, "logos/$logo");
         }

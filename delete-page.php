@@ -26,7 +26,7 @@ try {
 
     if (!empty($pageId)) {
 
-        // connect to database
+        // connect to my database
         require_once('db.php');
 
         // run the SQL delete command

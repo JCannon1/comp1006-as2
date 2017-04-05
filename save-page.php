@@ -39,7 +39,7 @@ if ($ok) {
 
     // disconnect from my database
     $conn = null;
-
+    // link to pages page
     echo 'Page Saved. <a href="pages.php">Pages</a>';
 }
 ?>

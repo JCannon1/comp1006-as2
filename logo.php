@@ -18,6 +18,7 @@ require_once('header.php'); ?>
 </form>
 
 <?php 
+// Logo upload preview
 if (!empty($logo)) {
     echo '<img src="logos/' . $logo . '" title="Logo Preview" class="col-sm-offset-1"> />';
 }

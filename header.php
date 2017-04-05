@@ -18,7 +18,8 @@ ob_start();
 
 <nav class="navbar navbar-default">
     <ul class="nav navbar-nav">
-        <li><a href="default.php" class="navbar-brand"><img src="hockey-logo.jpg"<img src="<?php echo '<img src="logos/' . $logo['logo'] ?>"></a></li>
+        <!-- Added links for logo upload and page upload -->
+        <li><a href="default.php" class="navbar-brand"><img src="<?php echo '<img src="logos/' . $logo['logo'] ?>"></a></li>
         <li><a href="admin-users.php">Users</a></li> <li><a href="<?php echo $page ?>"></a></li>
 
         <?php

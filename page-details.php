@@ -37,7 +37,7 @@ if (!empty($_GET['pageId'])) {
 
 <main class="container">
     <h1>Add New Page</h1>
-
+    <!-- New page form -->
     <form method="post" action="save-page.php" enctype="multipart/form-data">
         <fieldset class="form-group">
             <label for="title" class="col-sm-1">Title: *</label>

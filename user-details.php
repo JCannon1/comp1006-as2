@@ -56,6 +56,7 @@ if (!empty($_GET['userId'])) {
 </main>
 
 <?php
+// Catch errors
 }
 catch (exception $e) {
     header('location:error.php');

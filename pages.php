@@ -41,8 +41,8 @@ if (empty($_SESSION['pageId'])) {
             
         echo '</td>';
 
-        // place somewhere else
-        // echo '<img src="images/' . $logo['logo'] . ' />';
+        
+        // echo '<img src="logos/' . $logo['logo'] . ' />';
 
         if (empty($_SESSION['pageId'])) {
             echo '<td><a href="page-details.php?pageId=' . $page
