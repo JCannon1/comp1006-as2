@@ -19,7 +19,7 @@ ob_start();
 <nav class="navbar navbar-default">
     <ul class="nav navbar-nav">
         <li><a href="default.php" class="navbar-brand"><img src="<?php echo move_uploaded_file($tmp_name, "uploads/$name"); ?>"></a></li>
-        <li><a href="admin-users.php">Users</a></li> <li><a href="<?php echo $page ?>"></a></li>
+        <li><a href="admin-users.php">Users</a></li> <li><a href="<?php echo $pageId ?>"></a></li>
 
         <?php
         // make sure user is logged in
