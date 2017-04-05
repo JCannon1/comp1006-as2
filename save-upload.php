@@ -7,8 +7,8 @@
 <body>
 
 <?php
-if (!empty($_FILES['anyFile']['name'])) {
-        $name = $_FILES['anyFile']['name'];
+if (!empty($_FILES['logo']['name'])) {
+        $name = $_FILES['logo']['name'];
 
         // use end() and explode() to get the letters after the last period i.e. the file extension
         $arr = end(explode('.', $name));
@@ -27,21 +27,23 @@ if (!empty($_FILES['anyFile']['name'])) {
         }
 
         // size check
-        $size = $_FILES['anyFile']['size'];
+        $size = $_FILES['logo']['size'];
         if ($size > 2048000) {
             echo 'Logo Image must be less than 2 MB<br />';
             $ok = false;
         }
 
         // rename to unique file name
-        $name = uniqid("") . "-$name";
+        $logo = uniqid("") . "-$name";
 
         // copy to /covers folder
-        $tmp_name = $_FILES['anyFile']['tmp_name'];
-        move_uploaded_file($tmp_name, "uploads/$name");
+        $tmp_name = $_FILES['logo']['tmp_name'];
+        move_uploaded_file($tmp_name, "logos/$logo");
 
     }
 ?>
 
 </body>
-</html>
+</html> 
+
+
