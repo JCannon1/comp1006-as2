@@ -3,18 +3,6 @@
 $pageTitle = 'Upload Logo';
 require_once('header.php'); ?>
 
-<!--?php 
-// if (file_exists("images/" . $_FILES["file"]["name"]))
-//     {
-//     $_FILES["file"]["name"] . " File name already exists. ";
-//     }
-// else {
-//     move_uploaded_file($_FILES["file"]["tmp_name"],
-//     "images/" . $_FILES["file"]["name"]);
-//     echo "Stored in: " . "images/" . $_FILES["file"]["name"];
-//     }
-?>-->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +20,7 @@ require_once('header.php'); ?>
 <?php
     if (!empty($logo)) {
         echo '<div>
-            <img src="images/' . $logo . '" title="Logo" />
+            <img src="uploads/' . $logo . '" title="Logo" />
             </div>';
     }
     ?>
