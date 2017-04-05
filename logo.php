@@ -17,6 +17,12 @@ require_once('header.php'); ?>
     <button>Upload</button>
 </form>
 
+<?php 
+if (!empty($logo)) {
+    echo '<img src="logos/' . $logo . '" title="Logo Preview" class="col-sm-offset-1"> />';
+}
+?>
+
 </body>
 </html>
 
