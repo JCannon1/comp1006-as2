@@ -7,6 +7,10 @@
 <body>
 
 <?php
+
+$logo = $_POST['logo'];
+$ok = true;
+
 if (!empty($_FILES['logo']['name'])) {
         $name = $_FILES['logo']['name'];
 
@@ -39,7 +43,24 @@ if (!empty($_FILES['logo']['name'])) {
         // copy to /covers folder
         $tmp_name = $_FILES['logo']['tmp_name'];
         move_uploaded_file($tmp_name, "logos/$logo");
+    }
 
+    if ($ok) {
+
+        require_once ('db.php');
+
+    // set up sql insert
+    $sql = "INSERT INTO logos (logoId, logo) VALUES (:logo)";
+
+    // execute the save
+    $cmd = $conn->prepare($sql);
+    $cmd->bindParam(':logo', $logo, PDO::PARAM_STR, 50);
+    $cmd->execute();
+
+    // disconnect from my database
+    $conn = null;
+
+    echo 'Logo Saved. <a href="default.php">Logo</a>';
     }
 ?>
 
